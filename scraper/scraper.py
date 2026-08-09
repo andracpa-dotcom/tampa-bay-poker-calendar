@@ -171,6 +171,33 @@ def fetch(url: str) -> str:
     return resp.text
 
 
+def debug_page_structure(html: str) -> None:
+    """Temporary diagnostic: prints clues about the page's real HTML shape
+    so we can see exactly why parse_calendar_html found 0 tournaments,
+    without having to guess. Safe to leave in - it's cheap and only prints
+    a handful of lines per room.
+    """
+    soup = BeautifulSoup(html, "html.parser")
+    print(f"    DEBUG: fetched {len(html)} chars")
+    links = soup.find_all("a", href=lambda h: h and "/poker-tournament/" in h)
+    print(f"    DEBUG: found {len(links)} <a href=.../poker-tournament/...> links anywhere on the page")
+    tds = soup.find_all("td")
+    print(f"    DEBUG: found {len(tds)} <td> elements total")
+    tds_with_links = [td for td in tds if td.find("a", href=lambda h: h and "/poker-tournament/" in h)]
+    print(f"    DEBUG: {len(tds_with_links)} of those <td> elements directly contain a tournament link")
+    if links:
+        sample = links[0]
+        print(f"    DEBUG: sample link text = {sample.get_text(' ', strip=True)!r}")
+        print(f"    DEBUG: sample link href = {sample['href']!r}")
+        ancestor_tags = [p.name for p in sample.parents if p.name]
+        print(f"    DEBUG: sample link's ancestor tags (innermost first) = {ancestor_tags[:8]}")
+    else:
+        print("    DEBUG: no tournament links found anywhere in the fetched HTML at all")
+    if tds_with_links:
+        sample_cell_text = tds_with_links[0].get_text(" ", strip=True)[:200]
+        print(f"    DEBUG: sample <td>-with-link text = {sample_cell_text!r}")
+
+
 def next_month_start(d: date) -> date:
     if d.month == 12:
         return date(d.year + 1, 1, 1)
@@ -185,6 +212,7 @@ def scrape_room(room: dict):
     url_current = f"{BASE}/poker-room/{slug}/tournaments"
     print(f"  fetching current month: {url_current}")
     html = fetch(url_current)
+    debug_page_structure(html)
     for ev in parse_calendar_html(html, room):
         all_events[ev["pokeratlas_url"]] = ev
 
