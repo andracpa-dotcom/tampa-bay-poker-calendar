@@ -28,7 +28,7 @@ BASE = "https://www.pokeratlas.com"
 HEADERS = {
     "User-Agent": (
         "TampaBayPokerCalendarBot/1.0 "
-        "(+https://github.com/ — daily calendar sync for tampabaypoker.com; "
+        "(+https://github.com/ - daily calendar sync for tampabaypoker.com; "
         "contact via site)"
     )
 }
