@@ -14,6 +14,7 @@ next month), with a polite delay between requests and a descriptive
 User-Agent, respecting robots.txt (which only disallows /go/ and /admin/).
 """
 import json
+import os
 import re
 import sys
 import time
@@ -21,18 +22,27 @@ from datetime import datetime, date
 from pathlib import Path
 from urllib.parse import urljoin
 
-# PokerAtlas's server returns 403 Forbidden to plain `requests` calls, even
-# with browser-style headers and even though robots.txt permits these pages.
-# This is a TLS/network-fingerprint check, not just a header check - the
-# `requests` library's handshake is trivially distinguishable from a real
-# browser's regardless of what headers you attach. curl_cffi solves this by
-# reproducing an actual Chrome TLS/HTTP2 fingerprint (impersonate="chrome"
-# below), while we still keep the same polite behavior: ~2 pages/room/day,
-# a delay between requests, and respect for robots.txt.
-from curl_cffi import requests
+import requests
 from bs4 import BeautifulSoup
 
 BASE = "https://www.pokeratlas.com"
+
+# PokerAtlas's server blocks automated requests that originate from cloud/CI
+# IP ranges (like GitHub Actions'), regardless of what headers or TLS
+# fingerprint they carry - we confirmed this by ruling out both. Instead of
+# fetching PokerAtlas directly, we route requests through Cloudflare's
+# Browser Rendering API (https://developers.cloudflare.com/browser-rendering/) -
+# it spins up a real Chromium browser on Cloudflare's network, loads the page,
+# and hands back the fully-rendered HTML. We're already using Cloudflare to
+# host the site, so this needs no new account, just an API token (see
+# DEPLOYMENT_GUIDE.md). It has a free daily allowance that's far more than
+# this project needs (~10 page loads/day). We still keep the same polite
+# behavior on our end: ~2 pages/room/day, a delay between requests, and
+# respect for robots.txt.
+CF_CONTENT_ENDPOINT = "https://api.cloudflare.com/client/v4/accounts/{account_id}/browser-rendering/content"
+CF_ACCOUNT_ID = os.environ.get("CF_ACCOUNT_ID")
+CF_API_TOKEN = os.environ.get("CF_API_TOKEN")
+
 REQUEST_DELAY_SECONDS = 2.5
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -167,9 +177,29 @@ def parse_calendar_html(html: str, room: dict):
 
 
 def fetch(url: str) -> str:
-    resp = requests.get(url, timeout=30, impersonate="chrome")
+    if not CF_ACCOUNT_ID or not CF_API_TOKEN:
+        raise RuntimeError(
+            "CF_ACCOUNT_ID and/or CF_API_TOKEN environment variables are not set. "
+            "Add them as GitHub Actions secrets (see DEPLOYMENT_GUIDE.md)."
+        )
+    endpoint = CF_CONTENT_ENDPOINT.format(account_id=CF_ACCOUNT_ID)
+    resp = requests.post(
+        endpoint,
+        headers={
+            "Authorization": f"Bearer {CF_API_TOKEN}",
+            "Content-Type": "application/json",
+        },
+        json={
+            "url": url,
+            "gotoOptions": {"waitUntil": "networkidle0", "timeout": 45000},
+        },
+        timeout=70,
+    )
     resp.raise_for_status()
-    return resp.text
+    data = resp.json()
+    if not data.get("success"):
+        raise RuntimeError(f"Cloudflare Browser Rendering error: {data.get('errors')}")
+    return data["result"]
 
 
 def debug_page_structure(html: str) -> None:
