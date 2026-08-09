@@ -1,0 +1,10 @@
+{
+  "name": "tampa-bay-poker-calendar",
+  "compatibility_date": "2026-08-08",
+  "main": "worker/index.js",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page"
+  }
+}
