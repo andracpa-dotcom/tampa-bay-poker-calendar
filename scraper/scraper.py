@@ -21,24 +21,18 @@ from datetime import datetime, date
 from pathlib import Path
 from urllib.parse import urljoin
 
-import requests
+# PokerAtlas's server returns 403 Forbidden to plain `requests` calls, even
+# with browser-style headers and even though robots.txt permits these pages.
+# This is a TLS/network-fingerprint check, not just a header check - the
+# `requests` library's handshake is trivially distinguishable from a real
+# browser's regardless of what headers you attach. curl_cffi solves this by
+# reproducing an actual Chrome TLS/HTTP2 fingerprint (impersonate="chrome"
+# below), while we still keep the same polite behavior: ~2 pages/room/day,
+# a delay between requests, and respect for robots.txt.
+from curl_cffi import requests
 from bs4 import BeautifulSoup
 
 BASE = "https://www.pokeratlas.com"
-# PokerAtlas's server returns 403 Forbidden to requests carrying a custom
-# "bot"-style User-Agent, even though robots.txt permits these pages. This
-# is a common anti-scraping filter on the header's *shape*, not a statement
-# about our intent - we still fetch only ~2 pages/room/day, wait between
-# requests, and obey robots.txt (see REQUEST_DELAY_SECONDS below). Presenting
-# ordinary browser headers is what actually gets past that filter.
-HEADERS = {
-    "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-        "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-    ),
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-    "Accept-Language": "en-US,en;q=0.9",
-}
 REQUEST_DELAY_SECONDS = 2.5
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -173,7 +167,7 @@ def parse_calendar_html(html: str, room: dict):
 
 
 def fetch(url: str) -> str:
-    resp = requests.get(url, headers=HEADERS, timeout=30)
+    resp = requests.get(url, timeout=30, impersonate="chrome")
     resp.raise_for_status()
     return resp.text
 
@@ -236,7 +230,7 @@ def scrape_room(room: dict):
         html2 = fetch(url_next)
         for ev in parse_calendar_html(html2, room):
             all_events[ev["pokeratlas_url"]] = ev
-    except requests.RequestException as e:
+    except requests.exceptions.RequestException as e:
         print(f"  WARN: next-month fetch failed for {room['id']}: {e}", file=sys.stderr)
 
     return list(all_events.values())
@@ -251,7 +245,7 @@ def main():
             events = scrape_room(room)
             print(f"  -> {len(events)} tournament instances found")
             all_tournaments.extend(events)
-        except requests.RequestException as e:
+        except requests.exceptions.RequestException as e:
             print(f"  ERROR scraping {room['id']}: {e}", file=sys.stderr)
         time.sleep(REQUEST_DELAY_SECONDS)
 
