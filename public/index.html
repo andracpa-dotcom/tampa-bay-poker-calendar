@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tampa Bay Poker Tournament Calendar</title>
+<meta name="description" content="Live poker tournament calendar for Tampa Bay area rooms - Derby Lane, Seminole Hard Rock Tampa, The Silks at Tampa Bay Downs, TGT Poker, and One Eyed Jacks Sarasota. Filter and subscribe on your phone.">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="page">
+
+  <header class="site-header">
+    <h1>Tampa Bay Poker Tournament Calendar</h1>
+    <p>Derby Lane &middot; Seminole Hard Rock Tampa &middot; The Silks at Tampa Bay Downs &middot; TGT Poker &amp; Racebook &middot; One Eyed Jacks (Sarasota)</p>
+    <p id="updated-note" style="font-size:0.8rem;margin-top:6px;"></p>
+  </header>
+
+  <section class="card">
+    <h2>1. Choose what you want to see</h2>
+    <div class="filter-grid">
+      <div class="filter-group">
+        <label class="group-label">Poker Room</label>
+        <div id="room-filters"></div>
+      </div>
+      <div class="filter-group">
+        <label class="group-label">Game Type</label>
+        <div id="game-filters"></div>
+      </div>
+      <div class="filter-group">
+        <label class="group-label">Buy-in Range</label>
+        <div class="buyin-inputs">
+          <input type="number" id="minbuyin" min="0" placeholder="Min $">
+          <span>&ndash;</span>
+          <input type="number" id="maxbuyin" min="0" placeholder="Max $">
+        </div>
+      </div>
+    </div>
+    <p style="font-size:0.8rem;color:var(--muted);margin:12px 0 0;">Leave everything unchecked to include all rooms / all games.</p>
+  </section>
+
+  <section class="card">
+    <h2>2. Get it on your calendar</h2>
+    <div class="subscribe-actions">
+      <a class="btn btn-primary" id="subscribe-webcal" href="#">Subscribe (iPhone / Apple Calendar)</a>
+      <a class="btn btn-secondary" id="subscribe-google" href="#" target="_blank" rel="noopener">Add to Google Calendar</a>
+    </div>
+    <p style="font-size:0.85rem;color:var(--muted);margin:0 0 8px;">Or copy this link into any calendar app's &quot;Subscribe from URL&quot; / &quot;From Internet&quot; option (Outlook, etc.):</p>
+    <div class="copy-row">
+      <input type="text" id="subscribe-https" readonly>
+      <button class="btn btn-outline" id="copy-btn" type="button">Copy</button>
+      <span class="copy-feedback" id="copy-feedback">Copied!</span>
+    </div>
+    <p style="font-size:0.8rem;color:var(--muted);margin-top:10px;">This is a live subscription, not a one-time download: it automatically stays up to date as tournaments are added or times change &mdash; you only need to subscribe once.</p>
+  </section>
+
+  <section class="card">
+    <h2>3. Upcoming tournaments &nbsp;<span id="result-count" style="font-weight:400;color:var(--muted);font-size:0.85rem;"></span></h2>
+    <div style="overflow-x:auto;">
+      <table class="tournament-table">
+        <thead>
+          <tr><th>Time</th><th>Room</th><th>Tournament</th><th>Buy-in</th><th>Links</th></tr>
+        </thead>
+        <tbody id="tournament-body"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <p class="footnote">
+    Tournament data sourced from <a href="https://www.pokeratlas.com" target="_blank" rel="noopener">PokerAtlas</a> and updated once daily.
+    Always confirm details with the room before you go &mdash; schedules and buy-ins can change.
+  </p>
+
+</div>
+<script src="/app.js"></script>
+</body>
+</html>
