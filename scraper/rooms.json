@@ -1,0 +1,37 @@
+[
+  {
+    "id": "derby-lane",
+    "name": "Win Derby at Derby Lane",
+    "pokeratlas_slug": "derby-lane-st-petersburg",
+    "website": "http://www.derbylanepoker.com/",
+    "city": "St. Petersburg"
+  },
+  {
+    "id": "hard-rock-tampa",
+    "name": "Seminole Hard Rock Tampa",
+    "pokeratlas_slug": "hard-rock-tampa",
+    "website": "https://www.shrtpoker.com/",
+    "city": "Tampa"
+  },
+  {
+    "id": "silks-tampa-bay-downs",
+    "name": "The Silks at Tampa Bay Downs",
+    "pokeratlas_slug": "the-silks-poker-room-tampa",
+    "website": "https://www.tampabaydowns.com/poker/",
+    "city": "Tampa"
+  },
+  {
+    "id": "tgt-poker",
+    "name": "TGT Poker and Racebook",
+    "pokeratlas_slug": "tgt-poker-tampa",
+    "website": "http://tgtpoker.com/",
+    "city": "Tampa"
+  },
+  {
+    "id": "one-eyed-jacks",
+    "name": "One Eyed Jacks (Sarasota)",
+    "pokeratlas_slug": "one-eyed-jacks-sarasota",
+    "website": "https://betatjacks.com/tournaments/",
+    "city": "Sarasota"
+  }
+]
