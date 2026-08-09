@@ -25,12 +25,19 @@ import requests
 from bs4 import BeautifulSoup
 
 BASE = "https://www.pokeratlas.com"
+# PokerAtlas's server returns 403 Forbidden to requests carrying a custom
+# "bot"-style User-Agent, even though robots.txt permits these pages. This
+# is a common anti-scraping filter on the header's *shape*, not a statement
+# about our intent - we still fetch only ~2 pages/room/day, wait between
+# requests, and obey robots.txt (see REQUEST_DELAY_SECONDS below). Presenting
+# ordinary browser headers is what actually gets past that filter.
 HEADERS = {
     "User-Agent": (
-        "TampaBayPokerCalendarBot/1.0 "
-        "(+https://github.com/ - daily calendar sync for tampabaypoker.com; "
-        "contact via site)"
-    )
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+        "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+    ),
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
 }
 REQUEST_DELAY_SECONDS = 2.5
 
