@@ -27,21 +27,22 @@ from bs4 import BeautifulSoup
 
 BASE = "https://www.pokeratlas.com"
 
-# PokerAtlas's server blocks automated requests that originate from cloud/CI
-# IP ranges (like GitHub Actions'), regardless of what headers or TLS
-# fingerprint they carry - we confirmed this by ruling out both. Instead of
-# fetching PokerAtlas directly, we route requests through Cloudflare's
-# Browser Rendering API (https://developers.cloudflare.com/browser-rendering/) -
-# it spins up a real Chromium browser on Cloudflare's network, loads the page,
-# and hands back the fully-rendered HTML. We're already using Cloudflare to
-# host the site, so this needs no new account, just an API token (see
-# DEPLOYMENT_GUIDE.md). It has a free daily allowance that's far more than
-# this project needs (~10 page loads/day). We still keep the same polite
-# behavior on our end: ~2 pages/room/day, a delay between requests, and
-# respect for robots.txt.
-CF_CONTENT_ENDPOINT = "https://api.cloudflare.com/client/v4/accounts/{account_id}/browser-rendering/content"
-CF_ACCOUNT_ID = os.environ.get("CF_ACCOUNT_ID")
-CF_API_TOKEN = os.environ.get("CF_API_TOKEN")
+# PokerAtlas sits behind Cloudflare's bot protection, which blocks requests
+# from IP ranges it recognizes as automation infrastructure - we confirmed
+# this by ruling out request headers and TLS/browser fingerprint (still
+# blocked even via a real headless Chromium browser through Cloudflare's own
+# Browser Rendering service - its IPs are apparently recognized too). A
+# request from a normal, non-flagged IP gets the real page with no trouble.
+# So we route through ScrapeOps (https://scrapeops.io), a proxy aggregator
+# that rotates through many different IPs specifically to avoid this kind of
+# block. Requires a free ScrapeOps account and its key set as the
+# SCRAPEOPS_API_KEY GitHub Actions secret (see DEPLOYMENT_GUIDE.md). Plain
+# requests cost 1 credit each against ScrapeOps' free 1,000-credit/month
+# allowance (we use ~300/month); if a plain request still comes back looking
+# blocked, we automatically retry once with Cloudflare-bypass mode enabled
+# (10 credits) rather than failing outright.
+SCRAPEOPS_ENDPOINT = "https://proxy.scrapeops.io/v1/"
+SCRAPEOPS_API_KEY = os.environ.get("SCRAPEOPS_API_KEY")
 
 REQUEST_DELAY_SECONDS = 8
 
@@ -176,28 +177,42 @@ def parse_calendar_html(html: str, room: dict):
     return results
 
 
-def fetch(url: str, max_retries: int = 4) -> str:
-    if not CF_ACCOUNT_ID or not CF_API_TOKEN:
+BLOCKED_PAGE_MARKERS = (
+    "attention required",
+    "just a moment",
+    "checking your browser",
+    "cf-error",
+    "access denied",
+)
+
+
+def looks_blocked(html: str) -> bool:
+    """Heuristic check for a Cloudflare/anti-bot interstitial instead of the
+    real PokerAtlas page (these run ~5-6K characters and contain none of our
+    expected tournament links, versus tens of thousands of characters for a
+    real calendar page)."""
+    if "/poker-tournament/" in html:
+        return False
+    lowered = html.lower()
+    return len(html) < 15000 or any(marker in lowered for marker in BLOCKED_PAGE_MARKERS)
+
+
+def _scrapeops_request(url: str, extra_params: dict) -> requests.Response:
+    params = {"api_key": SCRAPEOPS_API_KEY, "url": url}
+    params.update(extra_params)
+    return requests.get(SCRAPEOPS_ENDPOINT, params=params, timeout=90)
+
+
+def fetch(url: str, max_retries: int = 3) -> str:
+    if not SCRAPEOPS_API_KEY:
         raise RuntimeError(
-            "CF_ACCOUNT_ID and/or CF_API_TOKEN environment variables are not set. "
-            "Add them as GitHub Actions secrets (see DEPLOYMENT_GUIDE.md)."
+            "SCRAPEOPS_API_KEY environment variable is not set. "
+            "Add it as a GitHub Actions secret (see DEPLOYMENT_GUIDE.md)."
         )
-    endpoint = CF_CONTENT_ENDPOINT.format(account_id=CF_ACCOUNT_ID)
+
+    # First try: a plain request (1 API credit).
     for attempt in range(1, max_retries + 1):
-        resp = requests.post(
-            endpoint,
-            headers={
-                "Authorization": f"Bearer {CF_API_TOKEN}",
-                "Content-Type": "application/json",
-            },
-            json={
-                "url": url,
-                "gotoOptions": {"waitUntil": "networkidle0", "timeout": 45000},
-            },
-            timeout=70,
-        )
-        # The Browser Rendering free tier only allows a handful of requests
-        # in flight at once; back off and retry instead of giving up.
+        resp = _scrapeops_request(url, {})
         if resp.status_code == 429:
             wait_seconds = 20 * attempt
             print(
@@ -208,13 +223,34 @@ def fetch(url: str, max_retries: int = 4) -> str:
             time.sleep(wait_seconds)
             continue
         resp.raise_for_status()
-        data = resp.json()
-        if not data.get("success"):
-            raise RuntimeError(f"Cloudflare Browser Rendering error: {data.get('errors')}")
-        return data["result"]
-    raise RuntimeError(
-        f"Cloudflare Browser Rendering: still rate-limited (429) after {max_retries} retries"
-    )
+        html = resp.text
+        if not looks_blocked(html):
+            return html
+        print(
+            "    Plain request came back looking blocked - retrying with "
+            "Cloudflare-bypass mode enabled (costs more credits)...",
+            file=sys.stderr,
+        )
+        break
+    else:
+        raise RuntimeError(f"ScrapeOps: still rate-limited (429) after {max_retries} retries")
+
+    # Fallback: Cloudflare-bypass mode (10 credits) if the plain request was blocked.
+    for attempt in range(1, max_retries + 1):
+        resp = _scrapeops_request(url, {"bypass": "cloudflare_level_1"})
+        if resp.status_code == 429:
+            wait_seconds = 20 * attempt
+            print(
+                f"    Rate limited (429) - waiting {wait_seconds}s before "
+                f"retry {attempt}/{max_retries}...",
+                file=sys.stderr,
+            )
+            time.sleep(wait_seconds)
+            continue
+        resp.raise_for_status()
+        return resp.text
+
+    raise RuntimeError(f"ScrapeOps: still rate-limited (429) after {max_retries} retries")
 
 
 def debug_page_structure(html: str) -> None:
