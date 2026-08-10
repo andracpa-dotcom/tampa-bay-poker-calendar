@@ -43,7 +43,7 @@ CF_CONTENT_ENDPOINT = "https://api.cloudflare.com/client/v4/accounts/{account_id
 CF_ACCOUNT_ID = os.environ.get("CF_ACCOUNT_ID")
 CF_API_TOKEN = os.environ.get("CF_API_TOKEN")
 
-REQUEST_DELAY_SECONDS = 2.5
+REQUEST_DELAY_SECONDS = 8
 
 ROOT = Path(__file__).resolve().parent.parent
 ROOMS_FILE = Path(__file__).resolve().parent / "rooms.json"
@@ -176,30 +176,45 @@ def parse_calendar_html(html: str, room: dict):
     return results
 
 
-def fetch(url: str) -> str:
+def fetch(url: str, max_retries: int = 4) -> str:
     if not CF_ACCOUNT_ID or not CF_API_TOKEN:
         raise RuntimeError(
             "CF_ACCOUNT_ID and/or CF_API_TOKEN environment variables are not set. "
             "Add them as GitHub Actions secrets (see DEPLOYMENT_GUIDE.md)."
         )
     endpoint = CF_CONTENT_ENDPOINT.format(account_id=CF_ACCOUNT_ID)
-    resp = requests.post(
-        endpoint,
-        headers={
-            "Authorization": f"Bearer {CF_API_TOKEN}",
-            "Content-Type": "application/json",
-        },
-        json={
-            "url": url,
-            "gotoOptions": {"waitUntil": "networkidle0", "timeout": 45000},
-        },
-        timeout=70,
+    for attempt in range(1, max_retries + 1):
+        resp = requests.post(
+            endpoint,
+            headers={
+                "Authorization": f"Bearer {CF_API_TOKEN}",
+                "Content-Type": "application/json",
+            },
+            json={
+                "url": url,
+                "gotoOptions": {"waitUntil": "networkidle0", "timeout": 45000},
+            },
+            timeout=70,
+        )
+        # The Browser Rendering free tier only allows a handful of requests
+        # in flight at once; back off and retry instead of giving up.
+        if resp.status_code == 429:
+            wait_seconds = 20 * attempt
+            print(
+                f"    Rate limited (429) - waiting {wait_seconds}s before "
+                f"retry {attempt}/{max_retries}...",
+                file=sys.stderr,
+            )
+            time.sleep(wait_seconds)
+            continue
+        resp.raise_for_status()
+        data = resp.json()
+        if not data.get("success"):
+            raise RuntimeError(f"Cloudflare Browser Rendering error: {data.get('errors')}")
+        return data["result"]
+    raise RuntimeError(
+        f"Cloudflare Browser Rendering: still rate-limited (429) after {max_retries} retries"
     )
-    resp.raise_for_status()
-    data = resp.json()
-    if not data.get("success"):
-        raise RuntimeError(f"Cloudflare Browser Rendering error: {data.get('errors')}")
-    return data["result"]
 
 
 def debug_page_structure(html: str) -> None:
@@ -210,6 +225,8 @@ def debug_page_structure(html: str) -> None:
     """
     soup = BeautifulSoup(html, "html.parser")
     print(f"    DEBUG: fetched {len(html)} chars")
+    title = soup.find("title")
+    print(f"    DEBUG: <title> = {title.get_text(strip=True) if title else '(none)'}")
     links = soup.find_all("a", href=lambda h: h and "/poker-tournament/" in h)
     print(f"    DEBUG: found {len(links)} <a href=.../poker-tournament/...> links anywhere on the page")
     tds = soup.find_all("td")
@@ -224,6 +241,8 @@ def debug_page_structure(html: str) -> None:
         print(f"    DEBUG: sample link's ancestor tags (innermost first) = {ancestor_tags[:8]}")
     else:
         print("    DEBUG: no tournament links found anywhere in the fetched HTML at all")
+        snippet = re.sub(r"\s+", " ", html).strip()[:800]
+        print(f"    DEBUG: first 800 chars of raw HTML: {snippet!r}")
     if tds_with_links:
         sample_cell_text = tds_with_links[0].get_text(" ", strip=True)[:200]
         print(f"    DEBUG: sample <td>-with-link text = {sample_cell_text!r}")
@@ -258,6 +277,7 @@ def scrape_room(room: dict):
     print(f"  fetching next month: {url_next}")
     try:
         html2 = fetch(url_next)
+        debug_page_structure(html2)
         for ev in parse_calendar_html(html2, room):
             all_events[ev["pokeratlas_url"]] = ev
     except requests.exceptions.RequestException as e:
