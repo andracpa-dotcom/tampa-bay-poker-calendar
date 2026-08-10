@@ -312,9 +312,29 @@ def scrape_room(room: dict):
     return list(all_events.values())
 
 
+def load_previous_tournaments() -> dict:
+    """Room id -> list of tournament dicts, loaded from whatever's already
+    live on disk. Used as a fallback for rooms that fail to scrape this run,
+    so a bad day for one room doesn't wipe out its otherwise-good data -
+    we just keep showing yesterday's listings for that room until it
+    scrapes successfully again."""
+    if not OUTPUT_FILE.exists():
+        return {}
+    try:
+        data = json.loads(OUTPUT_FILE.read_text())
+    except (json.JSONDecodeError, OSError):
+        return {}
+    by_room: dict = {}
+    for t in data.get("tournaments", []):
+        by_room.setdefault(t["room_id"], []).append(t)
+    return by_room
+
+
 def main():
     rooms = json.loads(ROOMS_FILE.read_text())
+    previous_by_room = load_previous_tournaments()
     all_tournaments = []
+    stale_rooms = []
     for room in rooms:
         print(f"Scraping {room['name']} ({room['pokeratlas_slug']})...")
         try:
@@ -324,8 +344,18 @@ def main():
         except Exception as e:
             # Don't let one room's persistent failure (rate limits, a
             # transient ScrapeOps outage, etc.) take down the whole run -
-            # log it and move on to the next room.
+            # log it, fall back to that room's last-known-good data if we
+            # have any, and move on to the next room.
             print(f"  ERROR scraping {room['id']}: {e}", file=sys.stderr)
+            fallback = previous_by_room.get(room["id"], [])
+            if fallback:
+                print(
+                    f"  -> keeping {len(fallback)} previously-scraped "
+                    f"tournaments for this room instead of dropping it",
+                    file=sys.stderr,
+                )
+                all_tournaments.extend(fallback)
+                stale_rooms.append(room["id"])
         time.sleep(REQUEST_DELAY_SECONDS)
 
     all_tournaments.sort(key=lambda t: (t["date"], t["time"], t["room_name"]))
@@ -340,11 +370,17 @@ def main():
         "rooms": rooms,
         "tournament_count": len(all_tournaments),
         "tournaments": all_tournaments,
+        # Room ids whose data in this file is carried over from a previous
+        # run because today's scrape failed for them - not shown in the UI,
+        # just here for troubleshooting.
+        "stale_rooms": stale_rooms,
     }
 
     OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT_FILE.write_text(json.dumps(output, indent=2))
     print(f"\nWrote {len(all_tournaments)} tournaments to {OUTPUT_FILE}")
+    if stale_rooms:
+        print(f"(Rooms using carried-over data this run: {', '.join(stale_rooms)})")
 
 
 if __name__ == "__main__":
