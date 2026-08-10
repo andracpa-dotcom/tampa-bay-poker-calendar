@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T01:57:04.943064Z",
+  "generated_at": "2026-08-10T11:01:22.337495Z",
   "rooms": [
     {
       "id": "derby-lane",
@@ -2146,7 +2146,5 @@
       "structure_url": "http://tgtpoker.com/"
     }
   ],
-  "stale_rooms": [
-    "silks-tampa-bay-downs"
-  ]
+  "stale_rooms": []
 }
