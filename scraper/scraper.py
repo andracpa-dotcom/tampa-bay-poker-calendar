@@ -321,7 +321,10 @@ def main():
             events = scrape_room(room)
             print(f"  -> {len(events)} tournament instances found")
             all_tournaments.extend(events)
-        except requests.exceptions.RequestException as e:
+        except Exception as e:
+            # Don't let one room's persistent failure (rate limits, a
+            # transient ScrapeOps outage, etc.) take down the whole run -
+            # log it and move on to the next room.
             print(f"  ERROR scraping {room['id']}: {e}", file=sys.stderr)
         time.sleep(REQUEST_DELAY_SECONDS)
 
