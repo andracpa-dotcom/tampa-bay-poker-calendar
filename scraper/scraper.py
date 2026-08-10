@@ -2,16 +2,23 @@
 """
 Tampa Bay Poker Calendar - PokerAtlas scraper.
 
-Fetches the current + next month tournament calendars for a fixed list of
-Tampa Bay area poker rooms from PokerAtlas (a room-by-room tournament
-listing site that does not offer a public API) and writes a normalized
+Fetches the current-month tournament calendar for a fixed list of Tampa Bay
+area poker rooms from PokerAtlas (a room-by-room tournament listing site
+that does not offer a public API) and writes a normalized
 data/tournaments.json file that the rest of the site (the filter page and
 the .ics feed generator) reads from.
 
+We only fetch the main "/tournaments" page per room (not a separate
+"next month" page) - PokerAtlas's next-month URL turns out to be an
+AJAX-only fragment that returns an empty shell when loaded as a normal
+page, bot-blocking aside. In practice this isn't a big loss: PokerAtlas's
+calendar grid always shows full weeks, so the last row of the current
+month's table already spills a few days into next month.
+
 Designed to be run once a day (see .github/workflows/scrape.yml). It is
-intentionally light: ~2 HTTP requests per room per day (current month +
-next month), with a polite delay between requests and a descriptive
-User-Agent, respecting robots.txt (which only disallows /go/ and /admin/).
+intentionally light: 1 HTTP request per room per day, with a polite delay
+between requests, respecting robots.txt (which only disallows /go/ and
+/admin/).
 """
 import json
 import os
@@ -213,11 +220,14 @@ def fetch(url: str, max_retries: int = 3) -> str:
     # First try: a plain request (1 API credit).
     for attempt in range(1, max_retries + 1):
         resp = _scrapeops_request(url, {})
-        if resp.status_code == 429:
-            wait_seconds = 20 * attempt
+        if resp.status_code == 429 or resp.status_code >= 500:
+            # 429 = rate limited; 5xx = ScrapeOps couldn't reach the target
+            # this time (their docs say this is common and transient, and
+            # doesn't consume a credit) - back off and try again.
+            wait_seconds = 15 * attempt
             print(
-                f"    Rate limited (429) - waiting {wait_seconds}s before "
-                f"retry {attempt}/{max_retries}...",
+                f"    Got HTTP {resp.status_code} - waiting {wait_seconds}s "
+                f"before retry {attempt}/{max_retries}...",
                 file=sys.stderr,
             )
             time.sleep(wait_seconds)
@@ -233,16 +243,16 @@ def fetch(url: str, max_retries: int = 3) -> str:
         )
         break
     else:
-        raise RuntimeError(f"ScrapeOps: still rate-limited (429) after {max_retries} retries")
+        raise RuntimeError(f"ScrapeOps: request kept failing after {max_retries} retries")
 
     # Fallback: Cloudflare-bypass mode (10 credits) if the plain request was blocked.
     for attempt in range(1, max_retries + 1):
         resp = _scrapeops_request(url, {"bypass": "cloudflare_level_1"})
-        if resp.status_code == 429:
-            wait_seconds = 20 * attempt
+        if resp.status_code == 429 or resp.status_code >= 500:
+            wait_seconds = 15 * attempt
             print(
-                f"    Rate limited (429) - waiting {wait_seconds}s before "
-                f"retry {attempt}/{max_retries}...",
+                f"    Got HTTP {resp.status_code} - waiting {wait_seconds}s "
+                f"before retry {attempt}/{max_retries}...",
                 file=sys.stderr,
             )
             time.sleep(wait_seconds)
@@ -250,7 +260,7 @@ def fetch(url: str, max_retries: int = 3) -> str:
         resp.raise_for_status()
         return resp.text
 
-    raise RuntimeError(f"ScrapeOps: still rate-limited (429) after {max_retries} retries")
+    raise RuntimeError(f"ScrapeOps: request kept failing after {max_retries} retries")
 
 
 def debug_page_structure(html: str) -> None:
@@ -284,40 +294,20 @@ def debug_page_structure(html: str) -> None:
         print(f"    DEBUG: sample <td>-with-link text = {sample_cell_text!r}")
 
 
-def next_month_start(d: date) -> date:
-    if d.month == 12:
-        return date(d.year + 1, 1, 1)
-    return date(d.year, d.month + 1, 1)
-
-
 def scrape_room(room: dict):
     slug = room["pokeratlas_slug"]
     all_events = {}
 
-    # Current month (default view, no start_date needed)
+    # Current month (default view, no start_date needed). The calendar grid
+    # always shows full weeks, so this naturally includes a few trailing
+    # days from next month too - see the module docstring for why we don't
+    # fetch a separate "next month" page.
     url_current = f"{BASE}/poker-room/{slug}/tournaments"
-    print(f"  fetching current month: {url_current}")
+    print(f"  fetching: {url_current}")
     html = fetch(url_current)
     debug_page_structure(html)
     for ev in parse_calendar_html(html, room):
         all_events[ev["pokeratlas_url"]] = ev
-
-    time.sleep(REQUEST_DELAY_SECONDS)
-
-    # Next month
-    nxt = next_month_start(date.today())
-    url_next = (
-        f"{BASE}/poker-room/{slug}/tournaments_calendar"
-        f"?start_date={nxt.isoformat()}"
-    )
-    print(f"  fetching next month: {url_next}")
-    try:
-        html2 = fetch(url_next)
-        debug_page_structure(html2)
-        for ev in parse_calendar_html(html2, room):
-            all_events[ev["pokeratlas_url"]] = ev
-    except requests.exceptions.RequestException as e:
-        print(f"  WARN: next-month fetch failed for {room['id']}: {e}", file=sys.stderr)
 
     return list(all_events.values())
 
