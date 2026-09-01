@@ -205,7 +205,7 @@ def looks_blocked(html: str) -> bool:
 
 
 def _scrapeops_request(url: str, extra_params: dict) -> requests.Response:
-    params = {"api_key": SCRAPEOPS_API_KEY, "url": url}
+    params = {"api_key": SCRAPEOPS_API_KEY, "url": url + ("&" if "?" in url else "?") + "_cb=" + str(int(time.time()))}
     params.update(extra_params)
     return requests.get(SCRAPEOPS_ENDPOINT, params=params, timeout=90)
 
@@ -270,7 +270,7 @@ def debug_page_structure(html: str) -> None:
     a handful of lines per room.
     """
     soup = BeautifulSoup(html, "html.parser")
-    print(f"    DEBUG: fetched {len(html)} chars")
+    print(f"    DEBUG: fetched {len(html)} chars"); ct = soup.find("span", class_="calendar-title"); print(f"    DEBUG: calendar-title text = {ct.get_text(strip=True) if ct else '(not found)'}")
     title = soup.find("title")
     print(f"    DEBUG: <title> = {title.get_text(strip=True) if title else '(none)'}")
     links = soup.find_all("a", href=lambda h: h and "/poker-tournament/" in h)
