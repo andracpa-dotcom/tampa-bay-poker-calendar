@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-04T15:04:23.488047Z",
+  "generated_at": "2026-10-05T18:58:17.920810Z",
   "rooms": [
     {
       "id": "derby-lane",
@@ -37,73 +37,8 @@
       "city": "Sarasota"
     }
   ],
-  "tournament_count": 184,
+  "tournament_count": 186,
   "tournaments": [
-    {
-      "room_id": "one-eyed-jacks",
-      "room_name": "One Eyed Jacks (Sarasota)",
-      "city": "Sarasota",
-      "date": "2026-10-04",
-      "time": "1:00PM",
-      "name": "$120 NL Hold'em - NLH",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 120,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/one-eyed-jacks-sarasota-120-100pm-nl-holdem-120-nlh-poker-tournament-300062?topid=300062-2026-10-04",
-      "structure_url": "https://betatjacks.com/tournaments/"
-    },
-    {
-      "room_id": "silks-tampa-bay-downs",
-      "room_name": "The Silks at Tampa Bay Downs",
-      "city": "Tampa",
-      "date": "2026-10-04",
-      "time": "1:00PM",
-      "name": "$60 NL Hold'em - Super Stack Blitz",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 60,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/the-silks-poker-room-tampa-60-100pm-nl-holdem-60-super-stack-blitz-poker-tournament-77535800-eb68-4224-9834-65a61f29fdde?topid=302886-2026-10-04",
-      "structure_url": "https://www.tampabaydowns.com/poker/"
-    },
-    {
-      "room_id": "one-eyed-jacks",
-      "room_name": "One Eyed Jacks (Sarasota)",
-      "city": "Sarasota",
-      "date": "2026-10-04",
-      "time": "5:00PM",
-      "name": "$130 NL Hold'em - Fall Classic Satellite",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 130,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/one-eyed-jacks-sarasota-130-500pm-nl-holdem-130-fall-classic-satellite-poker-tournament-300064?topid=300064-2026-10-04",
-      "structure_url": "https://betatjacks.com/tournaments/"
-    },
-    {
-      "room_id": "tgt-poker",
-      "room_name": "TGT Poker and Racebook",
-      "city": "Tampa",
-      "date": "2026-10-04",
-      "time": "6:15PM",
-      "name": "$60 NL Hold'em - Crazy Pineapple 60 Buy In",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 60,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/tgt-poker-tampa-60-615pm-nl-holdem-crazy-pineapple-60-buy-in-poker-tournament?topid=301897-2026-10-04",
-      "structure_url": "http://tgtpoker.com/"
-    },
-    {
-      "room_id": "silks-tampa-bay-downs",
-      "room_name": "The Silks at Tampa Bay Downs",
-      "city": "Tampa",
-      "date": "2026-10-04",
-      "time": "7:00PM",
-      "name": "$80 NL Hold'em - Super Stack 2K Gtd",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 80,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/the-silks-poker-room-tampa-80-700pm-nl-holdem-80-super-stack-2k-gtd-poker-tournament-baf42edf-fa61-42b9-be2e-79c3d43401a5?topid=302898-2026-10-04",
-      "structure_url": "https://www.tampabaydowns.com/poker/"
-    },
     {
       "room_id": "hard-rock-tampa",
       "room_name": "Seminole Hard Rock Tampa",
@@ -1353,6 +1288,19 @@
       "structure_url": "https://www.shrtpoker.com/"
     },
     {
+      "room_id": "tgt-poker",
+      "room_name": "TGT Poker and Racebook",
+      "city": "Tampa",
+      "date": "2026-10-15",
+      "time": "6:00PM",
+      "name": "$120 Mixed Games - Other Wsop Mixed Game League",
+      "game_type": "Mixed Games",
+      "game_code": "MIXED",
+      "buyin": 120,
+      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/tgt-poker-tampa-120-600pm-other-wsop-mixed-game-league-poker-tournament-636e1aa6-9bd7-43fe-af0c-6f6e1b19d2d3?topid=304139-2026-10-15",
+      "structure_url": "http://tgtpoker.com/"
+    },
+    {
       "room_id": "one-eyed-jacks",
       "room_name": "One Eyed Jacks (Sarasota)",
       "city": "Sarasota",
@@ -1691,6 +1639,19 @@
       "structure_url": "https://betatjacks.com/tournaments/"
     },
     {
+      "room_id": "tgt-poker",
+      "room_name": "TGT Poker and Racebook",
+      "city": "Tampa",
+      "date": "2026-10-18",
+      "time": "6:15PM",
+      "name": "$60 NL Hold'em - The Benjamin 60 Mega Satellite 18 200 Packages Gtd",
+      "game_type": "NL Hold'em",
+      "game_code": "NLH",
+      "buyin": 60,
+      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/tgt-poker-tampa-60-615pm-nl-holdem-the-benjamin-60-mega-satellite-18-200-packages-gtd-poker-tournament?topid=304141-2026-10-18",
+      "structure_url": "http://tgtpoker.com/"
+    },
+    {
       "room_id": "derby-lane",
       "room_name": "Win Derby at Derby Lane",
       "city": "St. Petersburg",
@@ -1722,11 +1683,11 @@
       "city": "Tampa",
       "date": "2026-10-19",
       "time": "6:00PM",
-      "name": "$100 NL Hold'em - 000 Guarantee The Benjamin Day 1",
+      "name": "$100 NL Hold'em - 50 000 Gtd Event Main 100 Nl Holdem 50 000 Guarantee The Benjamin Day 1 Tgt Poker 302424",
       "game_type": "NL Hold'em",
       "game_code": "NLH",
       "buyin": 100,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/tgt-poker-tampa-100-600pm-nl-holdem-50-000-guarantee-the-benjamin-day-1-poker-tournament-e8d46d62-a1d9-406d-a6b3-9a49b7e2670a?topid=302424-2026-10-19",
+      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/2026-50-000-gtd-event-main-100-nl-holdem-50-000-guarantee-the-benjamin-day-1-tgt-poker-302424?topid=302424",
       "structure_url": "http://tgtpoker.com/"
     },
     {
@@ -1774,11 +1735,11 @@
       "city": "Tampa",
       "date": "2026-10-20",
       "time": "6:00PM",
-      "name": "$100 NL Hold'em - 000 Guarantee The Benjamin Day 1",
+      "name": "$100 NL Hold'em - 50 000 Gtd Event Main 100 Nl Holdem 50 000 Guarantee The Benjamin Day 1 Tgt Poker 302414",
       "game_type": "NL Hold'em",
       "game_code": "NLH",
       "buyin": 100,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/tgt-poker-tampa-100-600pm-nl-holdem-50-000-guarantee-the-benjamin-day-1-poker-tournament?topid=302414-2026-10-20",
+      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/2026-50-000-gtd-event-main-100-nl-holdem-50-000-guarantee-the-benjamin-day-1-tgt-poker-302414?topid=302414",
       "structure_url": "http://tgtpoker.com/"
     },
     {
@@ -1830,7 +1791,7 @@
       "game_type": "PL Omaha Hi-Lo",
       "game_code": "PLO8",
       "buyin": 160,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/tgt-poker-tampa-160-1130am-pl-omaha-big-o-plo-8-160-buy-in-1-500-gtd-poker-tournament-8ac4f434-1510-4938-8756-83deb9aafced?topid=301482-2026-10-21",
+      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/tgt-poker-tampa-160-1130am-pl-omaha-big-o-plo-8-160-buy-in-1-500-gtd-poker-tournament-301482?topid=301482-2026-10-21",
       "structure_url": "http://tgtpoker.com/"
     },
     {
@@ -1865,11 +1826,11 @@
       "city": "Tampa",
       "date": "2026-10-21",
       "time": "6:00PM",
-      "name": "$100 NL Hold'em - 000 Guarantee The Benjamin Day 1",
+      "name": "$100 NL Hold'em - 50 000 Gtd Event Main 100 Nl Holdem 50 000 Guarantee The Benjamin Day 1 Tgt Poker 302423",
       "game_type": "NL Hold'em",
       "game_code": "NLH",
       "buyin": 100,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/tgt-poker-tampa-100-600pm-nl-holdem-50-000-guarantee-the-benjamin-day-1-poker-tournament-ee63b44a-d1a0-4363-943e-bdbb4714c804?topid=302423-2026-10-21",
+      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/2026-50-000-gtd-event-main-100-nl-holdem-50-000-guarantee-the-benjamin-day-1-tgt-poker-302423?topid=302423",
       "structure_url": "http://tgtpoker.com/"
     },
     {
@@ -1930,11 +1891,11 @@
       "city": "Tampa",
       "date": "2026-10-22",
       "time": "6:00PM",
-      "name": "$100 NL Hold'em - 000 Guarantee The Benjamin Day 1",
+      "name": "$100 NL Hold'em - 50 000 Gtd Event Main 100 Nl Holdem 50 000 Guarantee The Benjamin Day 1 Tgt Poker 302420",
       "game_type": "NL Hold'em",
       "game_code": "NLH",
       "buyin": 100,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/tgt-poker-tampa-100-600pm-nl-holdem-50-000-guarantee-the-benjamin-day-1-poker-tournament-a597ca88-34e0-4884-bcb2-6e452824a3c6?topid=302420-2026-10-22",
+      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/2026-50-000-gtd-event-main-100-nl-holdem-50-000-guarantee-the-benjamin-day-1-tgt-poker-302420?topid=302420",
       "structure_url": "http://tgtpoker.com/"
     },
     {
@@ -1969,11 +1930,11 @@
       "city": "Tampa",
       "date": "2026-10-23",
       "time": "12:00PM",
-      "name": "$100 NL Hold'em - 000 Guarantee The Benjamin Day 1",
+      "name": "$100 NL Hold'em - 50 000 Gtd Event Main 100 Nl Holdem 50 000 Guarantee The Benjamin Day 1 Tgt Poker 302417",
       "game_type": "NL Hold'em",
       "game_code": "NLH",
       "buyin": 100,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/tgt-poker-tampa-100-1200pm-nl-holdem-50-000-guarantee-the-benjamin-day-1-poker-tournament?topid=302417-2026-10-23",
+      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/2026-50-000-gtd-event-main-100-nl-holdem-50-000-guarantee-the-benjamin-day-1-tgt-poker-302417?topid=302417",
       "structure_url": "http://tgtpoker.com/"
     },
     {
@@ -2008,11 +1969,11 @@
       "city": "Tampa",
       "date": "2026-10-23",
       "time": "6:00PM",
-      "name": "$100 NL Hold'em - 000 Guarantee The Benjamin Day 1",
+      "name": "$100 NL Hold'em - 50 000 Gtd Event Main 100 Nl Holdem 50 000 Guarantee The Benjamin Day 1 Tgt Poker 302421",
       "game_type": "NL Hold'em",
       "game_code": "NLH",
       "buyin": 100,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/tgt-poker-tampa-100-600pm-nl-holdem-50-000-guarantee-the-benjamin-day-1-poker-tournament-f0b80c66-2498-4faa-916d-39e473d5af50?topid=302421-2026-10-23",
+      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/2026-50-000-gtd-event-main-100-nl-holdem-50-000-guarantee-the-benjamin-day-1-tgt-poker-302421?topid=302421",
       "structure_url": "http://tgtpoker.com/"
     },
     {
@@ -2060,11 +2021,11 @@
       "city": "Tampa",
       "date": "2026-10-24",
       "time": "11:00AM",
-      "name": "$100 NL Hold'em - 000 Guarantee The Benjamin Day 1",
+      "name": "$100 NL Hold'em - 50 000 Gtd Event Main 100 Nl Holdem 50 000 Guarantee The Benjamin Day 1 Tgt Poker 302425",
       "game_type": "NL Hold'em",
       "game_code": "NLH",
       "buyin": 100,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/tgt-poker-tampa-100-1100am-nl-holdem-50-000-guarantee-the-benjamin-day-1-poker-tournament?topid=302425-2026-10-24",
+      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/2026-50-000-gtd-event-main-100-nl-holdem-50-000-guarantee-the-benjamin-day-1-tgt-poker-302425?topid=302425",
       "structure_url": "http://tgtpoker.com/"
     },
     {
@@ -2073,11 +2034,11 @@
       "city": "Tampa",
       "date": "2026-10-24",
       "time": "5:00PM",
-      "name": "$100 NL Hold'em - 000 Guarantee The Benjamin Day 1",
+      "name": "$100 NL Hold'em - 50 000 Gtd Event Main 100 Nl Holdem 50 000 Guarantee The Benjamin Day 1 Tgt Poker",
       "game_type": "NL Hold'em",
       "game_code": "NLH",
       "buyin": 100,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/tgt-poker-tampa-100-500pm-nl-holdem-50-000-guarantee-the-benjamin-day-1-poker-tournament?topid=302413-2026-10-24",
+      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/2026-50-000-gtd-event-main-100-nl-holdem-50-000-guarantee-the-benjamin-day-1-tgt-poker?topid=302413",
       "structure_url": "http://tgtpoker.com/"
     },
     {
@@ -2099,11 +2060,11 @@
       "city": "Tampa",
       "date": "2026-10-25",
       "time": "12:00PM",
-      "name": "$100 NL Hold'em - 000 Guarantee The Benjamin Day 2",
+      "name": "$100 NL Hold'em - 50 000 Gtd Event Main 100 Nl Holdem 50 000 Guarantee The Benjamin Day 2 Tgt Poker",
       "game_type": "NL Hold'em",
       "game_code": "NLH",
       "buyin": 100,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/tgt-poker-tampa-100-1200pm-nl-holdem-50-000-guarantee-the-benjamin-day-2-poker-tournament?topid=302419-2026-10-25",
+      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/2026-50-000-gtd-event-main-100-nl-holdem-50-000-guarantee-the-benjamin-day-2-tgt-poker?topid=302419",
       "structure_url": "http://tgtpoker.com/"
     },
     {
@@ -2172,6 +2133,19 @@
       "structure_url": "https://betatjacks.com/tournaments/"
     },
     {
+      "room_id": "tgt-poker",
+      "room_name": "TGT Poker and Racebook",
+      "city": "Tampa",
+      "date": "2026-10-26",
+      "time": "6:45PM",
+      "name": "$50 PL Omaha - 000 Gtd PLO Weekly 50 Buy In",
+      "game_type": "PL Omaha",
+      "game_code": "PLO",
+      "buyin": 50,
+      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/tgt-poker-tampa-50-645pm-pl-omaha-1-000-gtd-plo-weekly-50-buy-in-poker-tournament-84a2688b-8387-494a-93bc-4bd463b299f9?topid=304144-2026-10-26",
+      "structure_url": "http://tgtpoker.com/"
+    },
+    {
       "room_id": "one-eyed-jacks",
       "room_name": "One Eyed Jacks (Sarasota)",
       "city": "Sarasota",
@@ -2196,6 +2170,19 @@
       "buyin": 40,
       "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/one-eyed-jacks-sarasota-40-630pm-nl-holdem-40-fab-40-poker-tournament-74e10e28-9dfe-42df-a767-11369e4699e9?topid=300108-2026-10-27",
       "structure_url": "https://betatjacks.com/tournaments/"
+    },
+    {
+      "room_id": "tgt-poker",
+      "room_name": "TGT Poker and Racebook",
+      "city": "Tampa",
+      "date": "2026-10-27",
+      "time": "6:45PM",
+      "name": "$55 NL Hold'em - 50 Tuesday Special 20 Bounties 55 Buy In",
+      "game_type": "NL Hold'em",
+      "game_code": "NLH",
+      "buyin": 55,
+      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/tgt-poker-tampa-55-645pm-nl-holdem-50-50-tuesday-special-20-bounties-55-buy-in-poker-tournament-34ba1584-8dcb-4dbd-ba78-c0b941641f84?topid=304140-2026-10-27",
+      "structure_url": "http://tgtpoker.com/"
     },
     {
       "room_id": "hard-rock-tampa",
@@ -2315,6 +2302,32 @@
       "structure_url": "https://www.shrtpoker.com/"
     },
     {
+      "room_id": "tgt-poker",
+      "room_name": "TGT Poker and Racebook",
+      "city": "Tampa",
+      "date": "2026-10-29",
+      "time": "6:00PM",
+      "name": "$120 Mixed Games - Other Wsop Mixed Game League",
+      "game_type": "Mixed Games",
+      "game_code": "MIXED",
+      "buyin": 120,
+      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/tgt-poker-tampa-120-600pm-other-wsop-mixed-game-league-poker-tournament-442f079d-b4b9-4219-bf24-82add3bfb1c6?topid=304143-2026-10-29",
+      "structure_url": "http://tgtpoker.com/"
+    },
+    {
+      "room_id": "tgt-poker",
+      "room_name": "TGT Poker and Racebook",
+      "city": "Tampa",
+      "date": "2026-10-29",
+      "time": "6:00PM",
+      "name": "$99 NL Hold'em - 999 Gtd Special 99 Problems 99 Buy In",
+      "game_type": "NL Hold'em",
+      "game_code": "NLH",
+      "buyin": 99,
+      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/tgt-poker-tampa-99-600pm-nl-holdem-14-999-gtd-special-99-problems-99-buy-in-poker-tournament-208021cc-3970-4168-b73e-0237c1002b11?topid=304145-2026-10-29",
+      "structure_url": "http://tgtpoker.com/"
+    },
+    {
       "room_id": "one-eyed-jacks",
       "room_name": "One Eyed Jacks (Sarasota)",
       "city": "Sarasota",
@@ -2430,6 +2443,19 @@
       "buyin": 100,
       "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/one-eyed-jacks-sarasota-100-630pm-nl-holdem-100-madness-poker-tournament-9ae7632a-b25a-44da-8326-7c66bb5ea83f?topid=300115-2026-10-31",
       "structure_url": "https://betatjacks.com/tournaments/"
+    },
+    {
+      "room_id": "tgt-poker",
+      "room_name": "TGT Poker and Racebook",
+      "city": "Tampa",
+      "date": "2026-10-31",
+      "time": "6:45PM",
+      "name": "$125 NL Hold'em - Stratosphere Stack Tricked Or Treated Bounties 5 50",
+      "game_type": "NL Hold'em",
+      "game_code": "NLH",
+      "buyin": 125,
+      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/tgt-poker-tampa-125-645pm-nl-holdem-125-stratosphere-stack-tricked-or-treated-bounties-5-50-poker-tournament?topid=304142-2026-10-31",
+      "structure_url": "http://tgtpoker.com/"
     }
   ],
   "stale_rooms": []
