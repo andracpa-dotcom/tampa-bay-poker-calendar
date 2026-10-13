@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T19:31:02.244596Z",
+  "generated_at": "2026-10-13T17:16:33.446757Z",
   "rooms": [
     {
       "id": "derby-lane",
@@ -37,125 +37,8 @@
       "city": "Sarasota"
     }
   ],
-  "tournament_count": 168,
+  "tournament_count": 159,
   "tournaments": [
-    {
-      "room_id": "hard-rock-tampa",
-      "room_name": "Seminole Hard Rock Tampa",
-      "city": "Tampa",
-      "date": "2026-10-12",
-      "time": "11:00AM",
-      "name": "$250 NL Hold'em - 2026 Pinktober Poker Open Event 5 250 Nl Holdem Seniors No Limit Holdem 50 Hard Rock Tampa",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 250,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/2026-2026-pinktober-poker-open-event-5-250-nl-holdem-seniors-no-limit-holdem-50-hard-rock-tampa?topid=300538",
-      "structure_url": "https://www.shrtpoker.com/"
-    },
-    {
-      "room_id": "derby-lane",
-      "room_name": "Win Derby at Derby Lane",
-      "city": "St. Petersburg",
-      "date": "2026-10-12",
-      "time": "11:00AM",
-      "name": "$60 NL Hold'em - 1.2K GTD",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 60,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/derby-lane-st-petersburg-60-1100am-nl-holdem-60-1-2k-gte-poker-tournament-6835387a-dd95-4bd4-8dbf-2077adfb3c78?topid=303345-2026-10-12",
-      "structure_url": "http://www.derbylanepoker.com/"
-    },
-    {
-      "room_id": "one-eyed-jacks",
-      "room_name": "One Eyed Jacks (Sarasota)",
-      "city": "Sarasota",
-      "date": "2026-10-12",
-      "time": "1:00PM",
-      "name": "$130 NL Hold'em - Fc Landmark Satellite",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 130,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/one-eyed-jacks-sarasota-130-100pm-nl-holdem-130-fc-landmark-satellite-poker-tournament-63043526-26af-4519-b5ed-39f975db17c4?topid=300114-2026-10-12",
-      "structure_url": "https://betatjacks.com/tournaments/"
-    },
-    {
-      "room_id": "silks-tampa-bay-downs",
-      "room_name": "The Silks at Tampa Bay Downs",
-      "city": "Tampa",
-      "date": "2026-10-12",
-      "time": "1:00PM",
-      "name": "$60 NL Hold'em - Satellite",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 60,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/the-silks-poker-room-tampa-60-100pm-nl-holdem-60-satellite-poker-tournament-d5aaa6d3-c73f-41b1-83e1-8f6f0957f986?topid=302903-2026-10-12",
-      "structure_url": "https://www.tampabaydowns.com/poker/"
-    },
-    {
-      "room_id": "hard-rock-tampa",
-      "room_name": "Seminole Hard Rock Tampa",
-      "city": "Tampa",
-      "date": "2026-10-12",
-      "time": "6:00PM",
-      "name": "$180 NL Hold'em - 2026 Pinktober Poker Open Event 6 180 Nl Holdem Triple Stack Hard Rock Tampa",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 180,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/2026-2026-pinktober-poker-open-event-6-180-nl-holdem-triple-stack-hard-rock-tampa?topid=300539",
-      "structure_url": "https://www.shrtpoker.com/"
-    },
-    {
-      "room_id": "silks-tampa-bay-downs",
-      "room_name": "The Silks at Tampa Bay Downs",
-      "city": "Tampa",
-      "date": "2026-10-12",
-      "time": "6:00PM",
-      "name": "$180 NL Hold'em - Super Stack 15K Gtd",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 180,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/the-silks-poker-room-tampa-180-600pm-nl-holdem-180-super-stack-15k-gtd-poker-tournament-a6ea4ad8-e278-4d8b-9dbf-02f01c0cee2d?topid=302904-2026-10-12",
-      "structure_url": "https://www.tampabaydowns.com/poker/"
-    },
-    {
-      "room_id": "one-eyed-jacks",
-      "room_name": "One Eyed Jacks (Sarasota)",
-      "city": "Sarasota",
-      "date": "2026-10-12",
-      "time": "6:30PM",
-      "name": "$130 NL Hold'em - Fall Classic Satellite",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 130,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/one-eyed-jacks-sarasota-130-630pm-nl-holdem-130-fall-classic-satellite-poker-tournament-300072?topid=300072-2026-10-12",
-      "structure_url": "https://betatjacks.com/tournaments/"
-    },
-    {
-      "room_id": "derby-lane",
-      "room_name": "Win Derby at Derby Lane",
-      "city": "St. Petersburg",
-      "date": "2026-10-12",
-      "time": "6:30PM",
-      "name": "$70 NL Hold'em - 6 500 GTD",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 70,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/derby-lane-st-petersburg-70-630pm-nl-holdem-70-6-500-gte-poker-tournament-ded9b9b2-fd85-4d40-acbb-6c50258bc4bb?topid=303347-2026-10-12",
-      "structure_url": "http://www.derbylanepoker.com/"
-    },
-    {
-      "room_id": "tgt-poker",
-      "room_name": "TGT Poker and Racebook",
-      "city": "Tampa",
-      "date": "2026-10-12",
-      "time": "6:45PM",
-      "name": "$50 PL Omaha - 000 Gtd PLO Weekly 50 Buy In",
-      "game_type": "PL Omaha",
-      "game_code": "PLO",
-      "buyin": 50,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/tgt-poker-tampa-50-645pm-pl-omaha-1-000-gtd-plo-weekly-50-buy-in-poker-tournament-891a16d6-4cdf-43cd-b80f-87d2fde6b789?topid=302422-2026-10-12",
-      "structure_url": "http://tgtpoker.com/"
-    },
     {
       "room_id": "hard-rock-tampa",
       "room_name": "Seminole Hard Rock Tampa",
