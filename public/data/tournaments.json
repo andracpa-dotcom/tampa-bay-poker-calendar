@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T16:42:27.848884Z",
+  "generated_at": "2026-10-20T14:35:05.432397Z",
   "rooms": [
     {
       "id": "derby-lane",
@@ -37,99 +37,8 @@
       "city": "Sarasota"
     }
   ],
-  "tournament_count": 98,
+  "tournament_count": 91,
   "tournaments": [
-    {
-      "room_id": "derby-lane",
-      "room_name": "Win Derby at Derby Lane",
-      "city": "St. Petersburg",
-      "date": "2026-10-19",
-      "time": "11:00AM",
-      "name": "$60 NL Hold'em - 1.2K GTD",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 60,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/derby-lane-st-petersburg-60-1100am-nl-holdem-60-1-2k-gte-poker-tournament-cb7b84d9-6ea3-47d7-b586-f03559b76601?topid=301922-2026-10-19",
-      "structure_url": "http://www.derbylanepoker.com/"
-    },
-    {
-      "room_id": "one-eyed-jacks",
-      "room_name": "One Eyed Jacks (Sarasota)",
-      "city": "Sarasota",
-      "date": "2026-10-19",
-      "time": "1:00PM",
-      "name": "$130 NL Hold'em - Fc Landmark Satellite",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 130,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/one-eyed-jacks-sarasota-130-100pm-nl-holdem-130-fc-landmark-satellite-poker-tournament-4572026a-7011-4932-983a-fee4bce8fd23?topid=300116-2026-10-19",
-      "structure_url": "https://betatjacks.com/tournaments/"
-    },
-    {
-      "room_id": "silks-tampa-bay-downs",
-      "room_name": "The Silks at Tampa Bay Downs",
-      "city": "Tampa",
-      "date": "2026-10-19",
-      "time": "1:00PM",
-      "name": "$60 NL Hold'em - Satellite",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 60,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/the-silks-poker-room-tampa-60-100pm-nl-holdem-60-satellite-poker-tournament-92e959be-49e0-4540-91a5-8a6347e71324?topid=304707-2026-10-19",
-      "structure_url": "https://www.tampabaydowns.com/poker/"
-    },
-    {
-      "room_id": "tgt-poker",
-      "room_name": "TGT Poker and Racebook",
-      "city": "Tampa",
-      "date": "2026-10-19",
-      "time": "6:00PM",
-      "name": "$100 NL Hold'em - 50 000 Gtd Event Main 100 Nl Holdem 50 000 Guarantee The Benjamin Day 1 Tgt Poker 302424",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 100,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/2026-50-000-gtd-event-main-100-nl-holdem-50-000-guarantee-the-benjamin-day-1-tgt-poker-302424?topid=302424",
-      "structure_url": "http://tgtpoker.com/"
-    },
-    {
-      "room_id": "silks-tampa-bay-downs",
-      "room_name": "The Silks at Tampa Bay Downs",
-      "city": "Tampa",
-      "date": "2026-10-19",
-      "time": "6:00PM",
-      "name": "$180 NL Hold'em - Super Stack 15K Gtd",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 180,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/the-silks-poker-room-tampa-180-600pm-nl-holdem-180-super-stack-15k-gtd-poker-tournament-62b15f1f-a371-49ed-8c47-bcad1265cd6c?topid=304708-2026-10-19",
-      "structure_url": "https://www.tampabaydowns.com/poker/"
-    },
-    {
-      "room_id": "one-eyed-jacks",
-      "room_name": "One Eyed Jacks (Sarasota)",
-      "city": "Sarasota",
-      "date": "2026-10-19",
-      "time": "6:30PM",
-      "name": "$130 NL Hold'em - Fall Classic Satellite",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 130,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/one-eyed-jacks-sarasota-130-630pm-nl-holdem-130-fall-classic-satellite-poker-tournament-30a04af2-3645-498c-8c90-eccc919f9352?topid=300087-2026-10-19",
-      "structure_url": "https://betatjacks.com/tournaments/"
-    },
-    {
-      "room_id": "derby-lane",
-      "room_name": "Win Derby at Derby Lane",
-      "city": "St. Petersburg",
-      "date": "2026-10-19",
-      "time": "6:30PM",
-      "name": "$70 NL Hold'em - 6 500 GTD",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 70,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/derby-lane-st-petersburg-70-630pm-nl-holdem-70-6-500-gte-poker-tournament-e4320f28-6d91-4948-906c-886a4dde0e04?topid=301924-2026-10-19",
-      "structure_url": "http://www.derbylanepoker.com/"
-    },
     {
       "room_id": "derby-lane",
       "room_name": "Win Derby at Derby Lane",
