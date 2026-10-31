@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T16:22:42.920912Z",
+  "generated_at": "2026-10-31T15:33:19.090572Z",
   "rooms": [
     {
       "id": "derby-lane",
@@ -37,138 +37,8 @@
       "city": "Sarasota"
     }
   ],
-  "tournament_count": 17,
+  "tournament_count": 8,
   "tournaments": [
-    {
-      "room_id": "hard-rock-tampa",
-      "room_name": "Seminole Hard Rock Tampa",
-      "city": "Tampa",
-      "date": "2026-10-30",
-      "time": "11:00AM",
-      "name": "$100 NL Hold'em - No Limit Holdem",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 100,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/hard-rock-tampa-100-1100am-nl-holdem-no-limit-holdem-poker-tournament-283081?topid=283081-2026-10-30",
-      "structure_url": "https://www.shrtpoker.com/"
-    },
-    {
-      "room_id": "derby-lane",
-      "room_name": "Win Derby at Derby Lane",
-      "city": "St. Petersburg",
-      "date": "2026-10-30",
-      "time": "11:00AM",
-      "name": "$95 NL Hold'em - 2K GTD W 25 K O S",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 95,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/derby-lane-st-petersburg-95-1100am-nl-holdem-95-2k-gte-w-25-k-o-s-poker-tournament-c1ee76c7-10cc-4093-aedd-a87bfea06477?topid=304609-2026-10-30",
-      "structure_url": "http://www.derbylanepoker.com/"
-    },
-    {
-      "room_id": "one-eyed-jacks",
-      "room_name": "One Eyed Jacks (Sarasota)",
-      "city": "Sarasota",
-      "date": "2026-10-30",
-      "time": "1:00PM",
-      "name": "$500 NL Hold'em - Rake Free",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 500,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/one-eyed-jacks-sarasota-500-100pm-nl-holdem-500-rake-free-poker-tournament-519d5f6d-54d6-4937-9e22-fe38abb99290?topid=300094-2026-10-30",
-      "structure_url": "https://betatjacks.com/tournaments/"
-    },
-    {
-      "room_id": "silks-tampa-bay-downs",
-      "room_name": "The Silks at Tampa Bay Downs",
-      "city": "Tampa",
-      "date": "2026-10-30",
-      "time": "1:00PM",
-      "name": "$100 NL Hold'em - Super Stack 20 Bounties",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 100,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/the-silks-poker-room-tampa-100-100pm-nl-holdem-100-super-stack-20-bounties-poker-tournament-eedcd6d9-c217-446a-82b6-d497949796cc?topid=306729-2026-10-30",
-      "structure_url": "https://www.tampabaydowns.com/poker/"
-    },
-    {
-      "room_id": "tgt-poker",
-      "room_name": "TGT Poker and Racebook",
-      "city": "Tampa",
-      "date": "2026-10-30",
-      "time": "2:30PM",
-      "name": "$40 NL Hold'em - Friday 50 50 Satellite 8 120 Seats Gtd",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 40,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/tgt-poker-tampa-40-230pm-nl-holdem-friday-50-50-satellite-8-120-seats-gtd-poker-tournament-6cb6c4fa-d9de-421f-9ece-c5cebc3e2bd4?topid=302406-2026-10-30",
-      "structure_url": "http://tgtpoker.com/"
-    },
-    {
-      "room_id": "hard-rock-tampa",
-      "room_name": "Seminole Hard Rock Tampa",
-      "city": "Tampa",
-      "date": "2026-10-30",
-      "time": "6:00PM",
-      "name": "$200 NL Hold'em - NLH Quad Stack Bounty",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 200,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/hard-rock-tampa-200-600pm-nl-holdem-nlh-quad-stack-bounty-poker-tournament?topid=200208-2026-10-30",
-      "structure_url": "https://www.shrtpoker.com/"
-    },
-    {
-      "room_id": "tgt-poker",
-      "room_name": "TGT Poker and Racebook",
-      "city": "Tampa",
-      "date": "2026-10-30",
-      "time": "6:00PM",
-      "name": "$120 NL Hold'em - Friday Night 50 50 4 000 Guarantee 50 Bounties",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 120,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/tgt-poker-tampa-120-600pm-nl-holdem-friday-night-50-50-4-000-guarantee-50-bounties-poker-tournament-455c06d2-6154-4937-bbbc-3917cffdce5b?topid=302411-2026-10-30",
-      "structure_url": "http://tgtpoker.com/"
-    },
-    {
-      "room_id": "one-eyed-jacks",
-      "room_name": "One Eyed Jacks (Sarasota)",
-      "city": "Sarasota",
-      "date": "2026-10-30",
-      "time": "6:30PM",
-      "name": "$45 NL Hold'em - Friday Night Madness",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 45,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/one-eyed-jacks-sarasota-45-630pm-nl-holdem-45-friday-night-madness-poker-tournament-6c50d44d-79a3-41b8-aa72-066722fda379?topid=300110-2026-10-30",
-      "structure_url": "https://betatjacks.com/tournaments/"
-    },
-    {
-      "room_id": "derby-lane",
-      "room_name": "Win Derby at Derby Lane",
-      "city": "St. Petersburg",
-      "date": "2026-10-30",
-      "time": "6:30PM",
-      "name": "$100 NL Hold'em - 5K GTD",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 100,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/derby-lane-st-petersburg-100-630pm-nl-holdem-100-5k-gte-poker-tournament-25d1484c-08cc-40f6-bf3d-c27ab886b492?topid=304611-2026-10-30",
-      "structure_url": "http://www.derbylanepoker.com/"
-    },
-    {
-      "room_id": "silks-tampa-bay-downs",
-      "room_name": "The Silks at Tampa Bay Downs",
-      "city": "Tampa",
-      "date": "2026-10-30",
-      "time": "7:00PM",
-      "name": "$60 NL Hold'em - Friday 3 500 Gtd",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 60,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/the-silks-poker-room-tampa-60-700pm-nl-holdem-60-friday-3-500-gtd-poker-tournament-f488bf06-b0a5-449f-a4da-4143a0202973?topid=306718-2026-10-30",
-      "structure_url": "https://www.tampabaydowns.com/poker/"
-    },
     {
       "room_id": "one-eyed-jacks",
       "room_name": "One Eyed Jacks (Sarasota)",
@@ -207,6 +77,19 @@
       "buyin": 120,
       "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/the-silks-poker-room-tampa-120-100pm-nl-holdem-120-super-stack-4k-gtd-poker-tournament-ea42e4e4-1140-48d4-b613-3786364f8e17?topid=306722-2026-10-31",
       "structure_url": "https://www.tampabaydowns.com/poker/"
+    },
+    {
+      "room_id": "tgt-poker",
+      "room_name": "TGT Poker and Racebook",
+      "city": "Tampa",
+      "date": "2026-10-31",
+      "time": "2:00PM",
+      "name": "$50 NL Hold'em - PLO Saturday",
+      "game_type": "NL Hold'em",
+      "game_code": "NLH",
+      "buyin": 50,
+      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/tgt-poker-tampa-50-200pm-nl-holdem-50-plo-saturday-poker-tournament-308563?topid=308563-2026-10-31",
+      "structure_url": "http://tgtpoker.com/"
     },
     {
       "room_id": "one-eyed-jacks",
