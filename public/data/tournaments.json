@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T18:30:58.763731Z",
+  "generated_at": "2026-11-19T18:44:31.269828Z",
   "rooms": [
     {
       "id": "derby-lane",
@@ -37,138 +37,8 @@
       "city": "Sarasota"
     }
   ],
-  "tournament_count": 98,
+  "tournament_count": 88,
   "tournaments": [
-    {
-      "room_id": "hard-rock-tampa",
-      "room_name": "Seminole Hard Rock Tampa",
-      "city": "Tampa",
-      "date": "2026-11-18",
-      "time": "11:00AM",
-      "name": "$400 NL Hold'em - Deep Stacks Challenge Nov 2026 400 Nl Holdem Deep Stack Challenge Hard Rock Tampa",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 400,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/2026-deep-stacks-challenge-nov-2026-400-nl-holdem-deep-stack-challenge-hard-rock-tampa?topid=308010-37536",
-      "structure_url": "https://www.shrtpoker.com/"
-    },
-    {
-      "room_id": "derby-lane",
-      "room_name": "Win Derby at Derby Lane",
-      "city": "St. Petersburg",
-      "date": "2026-11-18",
-      "time": "11:00AM",
-      "name": "$60 NL Hold'em - 1.2K GTD",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 60,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/derby-lane-st-petersburg-60-1100am-nl-holdem-60-1-2k-gte-poker-tournament-be3271da-51d1-432e-b39a-7f398f71610d?topid=310655-2026-11-18",
-      "structure_url": "http://www.derbylanepoker.com/"
-    },
-    {
-      "room_id": "tgt-poker",
-      "room_name": "TGT Poker and Racebook",
-      "city": "Tampa",
-      "date": "2026-11-18",
-      "time": "11:30AM",
-      "name": "$160 PL Omaha Hi-Lo - Big O PLO 8 160 Buy In 1 500 Gtd",
-      "game_type": "PL Omaha Hi-Lo",
-      "game_code": "PLO8",
-      "buyin": 160,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/tgt-poker-tampa-160-1130am-pl-omaha-big-o-plo-8-160-buy-in-1-500-gtd-poker-tournament-ffa8e683-56d2-4a8b-a4fe-1b24664d17ff?topid=306275-2026-11-18",
-      "structure_url": "http://tgtpoker.com/"
-    },
-    {
-      "room_id": "one-eyed-jacks",
-      "room_name": "One Eyed Jacks (Sarasota)",
-      "city": "Sarasota",
-      "date": "2026-11-18",
-      "time": "1:00PM",
-      "name": "$330 NLH / PLO Mix - 2026 Fall Classic Event 8 330 Nl Ha Fall Classic 330 NLH PLO One Eyed Jacks",
-      "game_type": "NLH / PLO Mix",
-      "game_code": "MIXED",
-      "buyin": 330,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/2026-2026-fall-classic-event-8-330-nl-ha-fall-classic-330-nlh-plo-one-eyed-jacks?topid=303912",
-      "structure_url": "https://betatjacks.com/tournaments/"
-    },
-    {
-      "room_id": "silks-tampa-bay-downs",
-      "room_name": "The Silks at Tampa Bay Downs",
-      "city": "Tampa",
-      "date": "2026-11-18",
-      "time": "1:00PM",
-      "name": "$60 NL Hold'em - Super Stack Blitz",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 60,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/the-silks-poker-room-tampa-60-100pm-nl-holdem-60-super-stack-blitz-poker-tournament-8040ccee-59c7-4c45-9e29-3883e5a712a1?topid=310301-2026-11-18",
-      "structure_url": "https://www.tampabaydowns.com/poker/"
-    },
-    {
-      "room_id": "hard-rock-tampa",
-      "room_name": "Seminole Hard Rock Tampa",
-      "city": "Tampa",
-      "date": "2026-11-18",
-      "time": "6:00PM",
-      "name": "$400 NL Hold'em - Deep Stacks Challenge Nov 2026 400 Nl Holdem Deep Stack Challenge Hard Rock Tampa",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 400,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/2026-deep-stacks-challenge-nov-2026-400-nl-holdem-deep-stack-challenge-hard-rock-tampa?topid=308010-37537",
-      "structure_url": "https://www.shrtpoker.com/"
-    },
-    {
-      "room_id": "one-eyed-jacks",
-      "room_name": "One Eyed Jacks (Sarasota)",
-      "city": "Sarasota",
-      "date": "2026-11-18",
-      "time": "6:30PM",
-      "name": "$100 NL Hold'em - Wacky No Rake",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 100,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/one-eyed-jacks-sarasota-100-630pm-nl-holdem-100-wacky-no-rake-poker-tournament-2114a9a9-45e7-4391-89b8-17b59509c75f?topid=303884-2026-11-18",
-      "structure_url": "https://betatjacks.com/tournaments/"
-    },
-    {
-      "room_id": "derby-lane",
-      "room_name": "Win Derby at Derby Lane",
-      "city": "St. Petersburg",
-      "date": "2026-11-18",
-      "time": "6:30PM",
-      "name": "$55 NL Hold'em - 5K GTD",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 55,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/derby-lane-st-petersburg-55-630pm-nl-holdem-55-5k-gte-poker-tournament-da9e25fd-f429-468b-9a33-bcc337de6965?topid=310658-2026-11-18",
-      "structure_url": "http://www.derbylanepoker.com/"
-    },
-    {
-      "room_id": "tgt-poker",
-      "room_name": "TGT Poker and Racebook",
-      "city": "Tampa",
-      "date": "2026-11-18",
-      "time": "6:45PM",
-      "name": "$45 NL Hold'em - Black Friday Satellite 5 199 Seats Gtd",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 45,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/tgt-poker-tampa-45-645pm-nl-holdem-45-black-friday-satellite-5-199-seats-gtd-poker-tournament-04cd74b8-4e1f-4f16-9866-25cb8b601736?topid=308350-2026-11-18",
-      "structure_url": "http://tgtpoker.com/"
-    },
-    {
-      "room_id": "silks-tampa-bay-downs",
-      "room_name": "The Silks at Tampa Bay Downs",
-      "city": "Tampa",
-      "date": "2026-11-18",
-      "time": "7:00PM",
-      "name": "$125 NL Hold'em - 7 500 Gtd",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 125,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/the-silks-poker-room-tampa-125-700pm-nl-holdem-125-7-500-gtd-poker-tournament-44204611-2965-41bb-932c-10702d3aaa86?topid=310302-2026-11-18",
-      "structure_url": "https://www.tampabaydowns.com/poker/"
-    },
     {
       "room_id": "hard-rock-tampa",
       "room_name": "Seminole Hard Rock Tampa",
