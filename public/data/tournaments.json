@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T17:29:24.983634Z",
+  "generated_at": "2026-11-23T21:49:15.055908Z",
   "rooms": [
     {
       "id": "derby-lane",
@@ -37,125 +37,8 @@
       "city": "Sarasota"
     }
   ],
-  "tournament_count": 63,
+  "tournament_count": 54,
   "tournaments": [
-    {
-      "room_id": "one-eyed-jacks",
-      "room_name": "One Eyed Jacks (Sarasota)",
-      "city": "Sarasota",
-      "date": "2026-11-22",
-      "time": "11:00AM",
-      "name": "NL Hold'em Freeroll - 2026 Fall Classic Nl Holdem Main Event Day 2 Restart One Eyed Jacks",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 0,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/2026-2026-fall-classic-nl-holdem-main-event-day-2-restart-one-eyed-jacks?topid=303910",
-      "structure_url": "https://betatjacks.com/tournaments/"
-    },
-    {
-      "room_id": "hard-rock-tampa",
-      "room_name": "Seminole Hard Rock Tampa",
-      "city": "Tampa",
-      "date": "2026-11-22",
-      "time": "11:00AM",
-      "name": "$400 NL Hold'em - Deep Stacks Challenge Nov 2026 400 Nl Holdem Deep Stack Challenge Hard Rock Tampa",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 400,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/2026-deep-stacks-challenge-nov-2026-400-nl-holdem-deep-stack-challenge-hard-rock-tampa?topid=308010-9052",
-      "structure_url": "https://www.shrtpoker.com/"
-    },
-    {
-      "room_id": "hard-rock-tampa",
-      "room_name": "Seminole Hard Rock Tampa",
-      "city": "Tampa",
-      "date": "2026-11-22",
-      "time": "12:00PM",
-      "name": "$300 NL Hold'em - Monster Stack Black Chip Bounty",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 300,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/hard-rock-tampa-300-1200pm-nl-holdem-monster-stack-black-chip-bounty-poker-tournament?topid=231622-2026-11-22",
-      "structure_url": "https://www.shrtpoker.com/"
-    },
-    {
-      "room_id": "derby-lane",
-      "room_name": "Win Derby at Derby Lane",
-      "city": "St. Petersburg",
-      "date": "2026-11-22",
-      "time": "12:00PM",
-      "name": "$60 NL Hold'em - 3.5K GTD",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 60,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/derby-lane-st-petersburg-60-1200pm-nl-holdem-60-3-5k-gte-poker-tournament-137e0966-25c1-42f9-be45-1fe94d5a3b87?topid=310660-2026-11-22",
-      "structure_url": "http://www.derbylanepoker.com/"
-    },
-    {
-      "room_id": "one-eyed-jacks",
-      "room_name": "One Eyed Jacks (Sarasota)",
-      "city": "Sarasota",
-      "date": "2026-11-22",
-      "time": "1:00PM",
-      "name": "$120 NL Hold'em - NLH",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 120,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/one-eyed-jacks-sarasota-120-100pm-nl-holdem-120-nlh-poker-tournament-07a07a0f-d53d-4ab8-805a-c53626624075?topid=303925-2026-11-22",
-      "structure_url": "https://betatjacks.com/tournaments/"
-    },
-    {
-      "room_id": "silks-tampa-bay-downs",
-      "room_name": "The Silks at Tampa Bay Downs",
-      "city": "Tampa",
-      "date": "2026-11-22",
-      "time": "1:00PM",
-      "name": "$60 NL Hold'em - Super Stack Blitz",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 60,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/the-silks-poker-room-tampa-60-100pm-nl-holdem-60-super-stack-blitz-poker-tournament-39bdbf1e-5b8a-4337-9f02-c8f3bd069599?topid=310310-2026-11-22",
-      "structure_url": "https://www.tampabaydowns.com/poker/"
-    },
-    {
-      "room_id": "tgt-poker",
-      "room_name": "TGT Poker and Racebook",
-      "city": "Tampa",
-      "date": "2026-11-22",
-      "time": "6:15PM",
-      "name": "$45 NL Hold'em - Black Friday Satellite 5 199 Seats Gtd",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 45,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/tgt-poker-tampa-45-615pm-nl-holdem-45-black-friday-satellite-5-199-seats-gtd-poker-tournament?topid=308352-2026-11-22",
-      "structure_url": "http://tgtpoker.com/"
-    },
-    {
-      "room_id": "derby-lane",
-      "room_name": "Win Derby at Derby Lane",
-      "city": "St. Petersburg",
-      "date": "2026-11-22",
-      "time": "6:30PM",
-      "name": "$45 NL Hold'em - Satty Into 40K 1 In 7",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 45,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/derby-lane-st-petersburg-45-630pm-nl-holdem-45-satty-into-40k-1-in-7-poker-tournament-2717d827-4f36-43ab-9584-fc1d59a359e8?topid=311386-2026-11-22",
-      "structure_url": "http://www.derbylanepoker.com/"
-    },
-    {
-      "room_id": "silks-tampa-bay-downs",
-      "room_name": "The Silks at Tampa Bay Downs",
-      "city": "Tampa",
-      "date": "2026-11-22",
-      "time": "7:00PM",
-      "name": "$80 NL Hold'em - Super Stack 2K Gtd",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 80,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/the-silks-poker-room-tampa-80-700pm-nl-holdem-80-super-stack-2k-gtd-poker-tournament-1b0224d0-6650-4979-90ad-ebf9dfbf45ef?topid=310312-2026-11-22",
-      "structure_url": "https://www.tampabaydowns.com/poker/"
-    },
     {
       "room_id": "derby-lane",
       "room_name": "Win Derby at Derby Lane",
@@ -816,7 +699,7 @@
       "game_type": "NL Hold'em",
       "game_code": "NLH",
       "buyin": 100,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/one-eyed-jacks-sarasota-100-100pm-nl-holdem-100-crazy-pineapple-poker-tournament-e07ca2ea-5fd5-478b-b839-fbef49fea618?topid=307556-2026-11-30",
+      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/one-eyed-jacks-sarasota-100-100pm-nl-holdem-100-crazy-pineapple-poker-tournament-13f3034c-9b31-45c8-b52f-912f87d767f0?topid=312108-2026-11-30",
       "structure_url": "https://betatjacks.com/tournaments/"
     },
     {
