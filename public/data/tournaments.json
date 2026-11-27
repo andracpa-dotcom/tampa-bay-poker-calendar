@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T19:20:56.926189Z",
+  "generated_at": "2026-11-27T19:15:48.565808Z",
   "rooms": [
     {
       "id": "derby-lane",
@@ -37,47 +37,8 @@
       "city": "Sarasota"
     }
   ],
-  "tournament_count": 33,
+  "tournament_count": 31,
   "tournaments": [
-    {
-      "room_id": "silks-tampa-bay-downs",
-      "room_name": "The Silks at Tampa Bay Downs",
-      "city": "Tampa",
-      "date": "2026-11-26",
-      "time": "1:00PM",
-      "name": "NL Hold'em Freeroll - Closed For Thanksgiving",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 0,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/the-silks-poker-room-tampa-100pm-nl-holdem-closed-for-thanksgiving-poker-tournament?topid=310318-2026-11-26",
-      "structure_url": "https://www.tampabaydowns.com/poker/"
-    },
-    {
-      "room_id": "derby-lane",
-      "room_name": "Win Derby at Derby Lane",
-      "city": "St. Petersburg",
-      "date": "2026-11-26",
-      "time": "6:30PM",
-      "name": "$45 NL Hold'em - Satty Into 40K 1 In 7",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 45,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/derby-lane-st-petersburg-45-630pm-nl-holdem-45-satty-into-40k-1-in-7-poker-tournament-623889d3-ce89-4e50-8aa6-fc7b52edf385?topid=311387-2026-11-26",
-      "structure_url": "http://www.derbylanepoker.com/"
-    },
-    {
-      "room_id": "silks-tampa-bay-downs",
-      "room_name": "The Silks at Tampa Bay Downs",
-      "city": "Tampa",
-      "date": "2026-11-26",
-      "time": "7:00PM",
-      "name": "NL Hold'em Freeroll - Closed For Thanksgiving",
-      "game_type": "NL Hold'em",
-      "game_code": "NLH",
-      "buyin": 0,
-      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/the-silks-poker-room-tampa-700pm-nl-holdem-closed-for-thanksgiving-poker-tournament?topid=310319-2026-11-26",
-      "structure_url": "https://www.tampabaydowns.com/poker/"
-    },
     {
       "room_id": "hard-rock-tampa",
       "room_name": "Seminole Hard Rock Tampa",
@@ -363,6 +324,19 @@
       "buyin": 50,
       "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/one-eyed-jacks-sarasota-50-530pm-nl-holdem-50-turbo-poker-tournament?topid=307552-2026-11-29",
       "structure_url": "https://betatjacks.com/tournaments/"
+    },
+    {
+      "room_id": "silks-tampa-bay-downs",
+      "room_name": "The Silks at Tampa Bay Downs",
+      "city": "Tampa",
+      "date": "2026-11-29",
+      "time": "7:00PM",
+      "name": "NL Hold'em Freeroll - No Tournament",
+      "game_type": "NL Hold'em",
+      "game_code": "NLH",
+      "buyin": 0,
+      "pokeratlas_url": "https://www.pokeratlas.com/poker-tournament/the-silks-poker-room-tampa-700pm-nl-holdem-no-tournament-poker-tournament-c78e77f6-bc21-44f1-86b2-297ce4218e19?topid=312785-2026-11-29",
+      "structure_url": "https://www.tampabaydowns.com/poker/"
     },
     {
       "room_id": "hard-rock-tampa",
